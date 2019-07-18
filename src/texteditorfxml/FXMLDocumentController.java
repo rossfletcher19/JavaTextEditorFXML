@@ -148,7 +148,7 @@ public class FXMLDocumentController implements Initializable {
         addClasses();
         Timer timer = new Timer();
         TimerTask task = new AutoSave();
-        timer.schedule(task, 2000, 5000); 
+        timer.schedule(task, 2000, 60000); 
 
     }
     
