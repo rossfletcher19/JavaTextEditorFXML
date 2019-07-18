@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.net.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane fx:id="headingsAnchorPane" id="AnchorPane" prefHeight="400.0" prefWidth="600.0" styleClass="mainFxmlClass" xmlns:fx="http://javafx.com/fxml/1" fx:controller="texteditorfxml.HeadingLinksController">
+    <stylesheets>
+        <URL value="@headinglinks.css"/>
+    </stylesheets>
+    <children>
+        <Hyperlink id="headingsLinks" fx:id="h1Link" text="h1. Biggest heading" layoutX="5.0" layoutY="3.0" onAction="#handleH1LinkAction"/>
+        <Hyperlink id="headingsLinks" fx:id="h2Link" text="h2. Bigger heading" layoutX="5.0" layoutY="35.0" onAction="#handleH2LinkAction"/>
+        <Hyperlink id="headingsLinks" fx:id="h3Link" text="h3. Big heading" layoutX="5.0" layoutY="67.0" onAction="#handleH2LinkAction"/>
+        <Hyperlink id="headingsLinks" fx:id="h4Link" text="h4. Normal heading" layoutX="5.0" layoutY="99.0" onAction="#handleH2LinkAction"/>
+        <Hyperlink id="headingsLinks" fx:id="h5Link" text="h5. Small heading" layoutX="5.0" layoutY="131.0" onAction="#handleH2LinkAction"/>
+        <Hyperlink id="headingsLinks" fx:id="h6Link" text="h6. Smallest heading" layoutX="5.0" layoutY="163.0" onAction="#handleH2LinkAction"/>
+    </children>
+</AnchorPane>

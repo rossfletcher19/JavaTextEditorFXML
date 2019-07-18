@@ -1,0 +1,59 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : Jul 3, 2019, 3:46:49 PM
+    Author     : rtbfl
+*/
+
+.h1Link .text {
+    -fx-font: bold 24px 'serif';
+}
+
+.h2Link .text {
+    -fx-font: bold 20px 'serif';
+}
+
+.h3Link .text {
+    -fx-font: bold 16px 'serif';
+}
+
+.h4Link .text {
+    -fx-font: bold 14px 'serif';
+}
+
+.h5Link .text {
+    -fx-font: bold 12px 'serif';
+}
+
+.h6Link .text {
+    -fx-font: 12px 'serif';
+}
+
+#headingsLinks:visited {
+    -fx-text-fill: #33adcc;
+    -fx-underline: false;
+}
+
+#headingsLinks,
+#headingsLinks:visited:armed,
+#headingsLinks:hover:armed {
+    -fx-text-fill:#33adcc; -fx-accent:#33adcc;
+}
+#headingsLinks:hover,
+#headingsLinks:visited {
+    -fx-text-fill: #33adcc; -fx-text-background-color:#33adcc;
+}
+
+#headingsLinks:hover{
+    -fx-underline: true;
+}
+
+#textArea {
+   
+    
+    
+    
+}

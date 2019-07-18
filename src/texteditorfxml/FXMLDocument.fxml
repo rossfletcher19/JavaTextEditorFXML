@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<BorderPane prefHeight="600.0" prefWidth="1000.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/2.2" fx:controller="texteditorfxml.FXMLDocumentController" >
+    <top>
+   
+        <MenuBar fx:id="menuBarFxId">
+            <menus>
+                <Menu text="File" fx:id="fileMenu">
+                    <items>
+                        <MenuItem onAction="#saveFile" text="Save" fx:id="saveFileFxId" />
+                    </items>
+                </Menu>
+                <Menu text="Edit" fx:id="editMenu">
+                    <items>
+                        <MenuItem text="Delete" />
+                    </items>
+                </Menu>
+                <Menu text="Help" fx:id="helpMenu">
+                    <items>
+                        <MenuItem text="About" />
+                    </items>
+                </Menu>
+            </menus>
+        </MenuBar>
+    </top>
+    <center>
+        <TextArea fx:id="textArea" />
+    </center>
+    <left>
+        <GridPane id="gridpaneLeft" fx:id="gridpaneLeft" hgap="10.0" prefHeight="200.0" prefWidth="320.0" vgap="10.0" >
+            <Accordion fx:id="leftAccordion" prefHeight="250.0" prefWidth="680.0">
+                <panes>
+                    <TitledPane fx:id="headingsTitlePane" animated="false" text="Headings">
+                        <content>
+                            <Pane prefHeight="100.0" prefWidth="200.0">
+                                <children>
+                                    <Hyperlink id="headingsLinks" fx:id="h1Link" text="h1. Biggest heading" layoutX="5.0" layoutY="3.0" onAction="#handleH1LinkAction"/>
+                                    <Hyperlink id="headingsLinks" fx:id="h2Link" text="h2. Bigger heading" layoutX="5.0" layoutY="35.0" onAction="#handleH2LinkAction"/>
+                                    <Hyperlink id="headingsLinks" fx:id="h3Link" text="h3. Big heading" layoutX="5.0" layoutY="67.0" onAction="#handleH3LinkAction"/>
+                                    <Hyperlink id="headingsLinks" fx:id="h4Link" text="h4. Normal heading" layoutX="5.0" layoutY="99.0" onAction="#handleH4LinkAction"/>
+                                    <Hyperlink id="headingsLinks" fx:id="h5Link" text="h5. Small heading" layoutX="5.0" layoutY="131.0" onAction="#handleH5LinkAction"/>
+                                    <Hyperlink id="headingsLinks" fx:id="h6Link" text="h6. Smallest heading" layoutX="5.0" layoutY="163.0" onAction="#handleH6LinkAction"/>
+                                </children>
+                            </Pane>
+                           
+                        </content>
+                    </TitledPane>
+                    <TitledPane fx:id="pane_sci" animated="false">
+                        <content>
+                            <Pane prefHeight="100.0" prefWidth="200.0">
+                                <children>
+<!--                                    <Hyperlink id="" fx:id="a" text="h1. Biggest heading" layoutX="5.0" layoutY="3.0" onAction=""/>
+                                    <Hyperlink id="" fx:id="u" text="h2. Bigger heading" layoutX="5.0" layoutY="35.0" onAction=""/>
+                                    <Hyperlink id="" fx:id="e" text="h3. Big heading" layoutX="5.0" layoutY="67.0" onAction=""/>
+                                    <Hyperlink id="" fx:id="o" text="h4. Normal heading" layoutX="5.0" layoutY="99.0" onAction=""/>
+                                    <Hyperlink id="" fx:id="." text="h5. Small heading" layoutX="5.0" layoutY="131.0" onAction=""/>
+                                    <Hyperlink id="" fx:id="i" text="h6. Smallest heading" layoutX="5.0" layoutY="163.0" onAction=""/>-->
+                                </children>
+                            </Pane>
+                        </content>
+                    </TitledPane>
+                </panes>
+            </Accordion>
+        </GridPane>
+    </left>
+  
+    <!--  <right>
+      
+    </right>
+    <bottom>
+      
+    </bottom>-->
+</BorderPane>
