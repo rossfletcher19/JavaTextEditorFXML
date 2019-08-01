@@ -1,3 +1,12 @@
+# NetBeans specific #
+nbproject/private/
+build/
+nbbuild/
+dist/
+nbdist/
+nbactions.xml
+nb-configuration.xml
+
 # Compiled source #
 ############
 *.com
@@ -18,6 +27,8 @@
 *.rar
 *.tar
 *.zip
+*.war
+*.ear 
 
 # Logs and databases #
 ############
