@@ -32,21 +32,25 @@ and open the template in the editor.
     -fx-font: 12px 'serif';
 }
 
-#headingsLinks:visited {
+.strongLink .text {
+    -fx-font: bold 20px 'serif';
+}
+
+#links:visited {
     -fx-text-fill: #33adcc;
     -fx-underline: false;
 }
 
-#headingsLinks,
-#headingsLinks:visited:armed,
-#headingsLinks:hover:armed {
+#links,
+#links:visited:armed,
+#links:hover:armed {
     -fx-text-fill:#33adcc; -fx-accent:#33adcc;
 }
-#headingsLinks:hover,
-#headingsLinks:visited {
+#links:hover,
+#links:visited {
     -fx-text-fill: #33adcc; -fx-text-background-color:#33adcc;
 }
 
-#headingsLinks:hover{
+#links:hover{
     -fx-underline: true;
 }

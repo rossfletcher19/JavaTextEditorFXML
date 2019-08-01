@@ -37,31 +37,40 @@
         <GridPane id="gridpaneLeft" fx:id="gridpaneLeft" hgap="10.0" prefHeight="200.0" prefWidth="320.0" vgap="10.0" >
             <Accordion fx:id="leftAccordion" prefHeight="250.0" prefWidth="680.0">
                 <panes>
-                    <TitledPane fx:id="headingsTitlePane" animated="false" text="Headings">
+
+                    <TitledPane fx:id="headingsTitlePane" animated="true" text="Headings">
                         <content>
-                            <Pane prefHeight="100.0" prefWidth="200.0">
-                                <children>
-                                    <Hyperlink id="headingsLinks" fx:id="h1Link" text="h1. Biggest heading" layoutX="5.0" layoutY="3.0" onAction="#handleH1LinkAction"/>
-                                    <Hyperlink id="headingsLinks" fx:id="h2Link" text="h2. Bigger heading" layoutX="5.0" layoutY="35.0" onAction="#handleH2LinkAction"/>
-                                    <Hyperlink id="headingsLinks" fx:id="h3Link" text="h3. Big heading" layoutX="5.0" layoutY="67.0" onAction="#handleH3LinkAction"/>
-                                    <Hyperlink id="headingsLinks" fx:id="h4Link" text="h4. Normal heading" layoutX="5.0" layoutY="99.0" onAction="#handleH4LinkAction"/>
-                                    <Hyperlink id="headingsLinks" fx:id="h5Link" text="h5. Small heading" layoutX="5.0" layoutY="131.0" onAction="#handleH5LinkAction"/>
-                                    <Hyperlink id="headingsLinks" fx:id="h6Link" text="h6. Smallest heading" layoutX="5.0" layoutY="163.0" onAction="#handleH6LinkAction"/>
-                                </children>
-                            </Pane>
-                           
+                                <Pane prefHeight="100.0" prefWidth="200.0">
+                                    <children>
+                                        <Hyperlink id="links" fx:id="h1Link" text="h1. Biggest heading" layoutX="5.0" layoutY="3.0" onAction="#handleH1LinkAction"/>
+                                        <Hyperlink id="links" fx:id="h2Link" text="h2. Bigger heading" layoutX="5.0" layoutY="35.0" onAction="#handleH2LinkAction"/>
+                                        <Hyperlink id="links" fx:id="h3Link" text="h3. Big heading" layoutX="5.0" layoutY="67.0" onAction="#handleH3LinkAction"/>
+                                        <Hyperlink id="links" fx:id="h4Link" text="h4. Normal heading" layoutX="5.0" layoutY="99.0" onAction="#handleH4LinkAction"/>
+                                        <Hyperlink id="links" fx:id="h5Link" text="h5. Small heading" layoutX="5.0" layoutY="131.0" onAction="#handleH5LinkAction"/>
+                                        <Hyperlink id="links" fx:id="h6Link" text="h6. Smallest heading" layoutX="5.0" layoutY="163.0" onAction="#handleH6LinkAction"/>
+                                    </children>
+                                </Pane>
+                          
                         </content>
                     </TitledPane>
-                    <TitledPane fx:id="pane_sci" animated="false">
+                   
+                    
+                    
+                    <TitledPane fx:id="effectsTitlePane" animated="true" text="Effects">
                         <content>
                             <Pane prefHeight="100.0" prefWidth="200.0">
                                 <children>
-<!--                                    <Hyperlink id="" fx:id="a" text="h1. Biggest heading" layoutX="5.0" layoutY="3.0" onAction=""/>
-                                    <Hyperlink id="" fx:id="u" text="h2. Bigger heading" layoutX="5.0" layoutY="35.0" onAction=""/>
-                                    <Hyperlink id="" fx:id="e" text="h3. Big heading" layoutX="5.0" layoutY="67.0" onAction=""/>
-                                    <Hyperlink id="" fx:id="o" text="h4. Normal heading" layoutX="5.0" layoutY="99.0" onAction=""/>
-                                    <Hyperlink id="" fx:id="." text="h5. Small heading" layoutX="5.0" layoutY="131.0" onAction=""/>
-                                    <Hyperlink id="" fx:id="i" text="h6. Smallest heading" layoutX="5.0" layoutY="163.0" onAction=""/>-->
+                                    <Hyperlink id="links" fx:id="strongLink" text="strong" layoutX="5.0" layoutY="3.0" onAction="#handleStrongLinkAction"/>
+                                    <Hyperlink id="links" fx:id="emphasisLink" text="emphasis" layoutX="5.0" layoutY="35.0" onAction="#handleEmphasisLinkAction"/>
+                                    <Hyperlink id="links" fx:id="citationLink" text="citation" layoutX="5.0" layoutY="67.0" onAction="#handleCitationLinkAction"/>
+<!--                                    <Hyperlink id="effectLinks" fx:id="deletedLink" text="deleted" layoutX="5.0" layoutY="99.0" onAction=""/>
+                                    <Hyperlink id="effectLinks" fx:id="insertedLink" text="inserted" layoutX="5.0" layoutY="131.0" onAction=""/>
+                                    <Hyperlink id="effectLinks" fx:id="superscriptLink" text="superscript" layoutX="5.0" layoutY="163.0" onAction=""/>
+                                    <Hyperlink id="effectLinks" fx:id="subscriptLink" text="subscript" layoutX="5.0" layoutY="67.0" onAction=""/>
+                                    <Hyperlink id="effectLinks" fx:id="monospacedLink" text="monospaced" layoutX="5.0" layoutY="99.0" onAction=""/>
+                                    <Hyperlink id="effectLinks" fx:id="blockquoteLink" text="blockquote" layoutX="5.0" layoutY="131.0" onAction=""/>
+                                    <Hyperlink id="effectLinks" fx:id="quoteLink" text="quote" layoutX="5.0" layoutY="163.0" onAction=""/>
+                                    <Hyperlink id="effectLinks" fx:id="colorLink" text="color" layoutX="5.0" layoutY="163.0" onAction=""/>-->
                                 </children>
                             </Pane>
                         </content>

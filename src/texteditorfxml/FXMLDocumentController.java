@@ -12,9 +12,6 @@ import java.net.URL;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
-import java.text.SimpleDateFormat;
-import java.time.LocalDate;
-import java.util.Date;
 import java.util.ResourceBundle;
 import java.util.Timer;
 import java.util.TimerTask;
@@ -36,11 +33,12 @@ import javax.swing.JFileChooser;
  */
 public class FXMLDocumentController implements Initializable {
     private Stage primaryStage;
-    @FXML private TextArea textArea;
+    @FXML public TextArea textArea;
     @FXML private final TextArea textArea2 = new TextArea();
     String selectedText = new String();
     @FXML private GridPane gridpaneLeft;
     String documentsPath = new JFileChooser().getFileSystemView().getDefaultDirectory().toString();
+    
     String[] headings = {"h1. ","h2. ","h3. ","h4. ","h5. ","h6. "};
     @FXML private Hyperlink h1Link;
     @FXML private Hyperlink h2Link;
@@ -48,52 +46,77 @@ public class FXMLDocumentController implements Initializable {
     @FXML private Hyperlink h4Link;
     @FXML private Hyperlink h5Link;
     @FXML private Hyperlink h6Link;
+    String[] effects = {"*","_","??","-","+","^","~","{{","}}","bq. ","{quote}","{color:color}","{color}"};
+    @FXML private Hyperlink strongLink;
+    @FXML private Hyperlink emphasisLink;
+    @FXML private Hyperlink citationLink;
+    @FXML private Hyperlink deletedLink;
+    @FXML private Hyperlink insertedLink;
+    @FXML private Hyperlink superscriptLink;
+    @FXML private Hyperlink subscriptLink;
+    @FXML private Hyperlink monospacedLink;
+    @FXML private Hyperlink blockquoteLink;
+    @FXML private Hyperlink quoteLink;
+    @FXML private Hyperlink colorLink;
     
+    @FXML 
+    private void handleStrongLinkAction(ActionEvent event ) {
+        selectedText = textArea.getSelectedText();
+        textArea.replaceSelection(effects[0] + selectedText + effects[0]);
+    }
+    
+    @FXML 
+    private void handleEmphasisLinkAction(ActionEvent event ) {
+        selectedText = textArea.getSelectedText();
+        textArea.replaceSelection(effects[1] + selectedText + effects[1]); 
+    }
+    
+    @FXML 
+    private void handleCitationLinkAction(ActionEvent event ) {
+        selectedText = textArea.getSelectedText();
+        textArea.replaceSelection(effects[2] + selectedText + effects[2]); 
+    }
     
     
     @FXML 
     private void handleH1LinkAction(ActionEvent event ) {
-        this.selectedText = this.textArea.getSelectedText();
+        selectedText = textArea.getSelectedText();
         textArea.replaceSelection(headings[0] + selectedText);
     }
     
     @FXML 
     private void handleH2LinkAction(ActionEvent event ) {
-        this.selectedText = this.textArea.getSelectedText();
+        selectedText = textArea.getSelectedText();
         textArea.replaceSelection(headings[1] + selectedText); 
     }
     
-        @FXML 
+    @FXML 
     private void handleH3LinkAction(ActionEvent event ) {
-        this.selectedText = this.textArea.getSelectedText();
+        selectedText = textArea.getSelectedText();
         textArea.replaceSelection(headings[2] + selectedText); 
     }
     
-        @FXML 
+    @FXML 
     private void handleH4LinkAction(ActionEvent event ) {
-        this.selectedText = this.textArea.getSelectedText();
+        selectedText = textArea.getSelectedText();
         textArea.replaceSelection(headings[3] + selectedText); 
     }
     
-        @FXML 
+    @FXML 
     private void handleH5LinkAction(ActionEvent event ) {
-        this.selectedText = this.textArea.getSelectedText();
+        selectedText = textArea.getSelectedText();
         textArea.replaceSelection(headings[4] + selectedText); 
     }
     
-        @FXML 
+    @FXML 
     private void handleH6LinkAction(ActionEvent event ) {
-        this.selectedText = this.textArea.getSelectedText();
+        selectedText = textArea.getSelectedText();
         textArea.replaceSelection(headings[5] + selectedText); 
     }
     
-    private void createOpeningFile(File file){
-        
-        
-    }
+    
     
     private void createOpeningFolder(){
-//        String documentsPath = new JFileChooser().getFileSystemView().getDefaultDirectory().toString();
         Path path = Paths.get(documentsPath + "\\jc");
 
         if (Files.exists(path)) {
@@ -132,21 +155,32 @@ public class FXMLDocumentController implements Initializable {
     }
     
     private void addClasses(){
-    gridpaneLeft.getStyleClass().add("gridPaneLeft");
     h1Link.getStyleClass().add("h1Link");
     h2Link.getStyleClass().add("h2Link");
     h3Link.getStyleClass().add("h3Link");
     h4Link.getStyleClass().add("h4Link");
     h5Link.getStyleClass().add("h5Link");
     h6Link.getStyleClass().add("h6Link");
+    strongLink.getStyleClass().add("strongLink");
+    emphasisLink.getStyleClass().add("emphasisLink");
+    citationLink.getStyleClass().add("citationLink");
+//    deletedLink.getStyleClass().add("deletedLink");
+//    insertedLink.getStyleClass().add("insertedLink");
+//    superscriptLink.getStyleClass().add("superscriptLink");
+//    subscriptLink.getStyleClass().add("subscriptLink");
+//    monospacedLink.getStyleClass().add("monospacedLink");
+//    blockquoteLink.getStyleClass().add("blockquoteLink");
+//    quoteLink.getStyleClass().add("quoteLink");
+//    colorLink.getStyleClass().add("colorLink");
     }
     
     @Override
     public void initialize(URL url, ResourceBundle rb) {
+//        headingsController.injectMainController(this);
         textArea.setWrapText(true);
-        createOpeningFolder();
         addClasses();
-        Timer timer = new Timer();
+        createOpeningFolder();
+        Timer timer = new Timer();;
         TimerTask task = new AutoSave();
         timer.schedule(task, 2000, 60000); 
 

@@ -8,7 +8,7 @@
   </information>
   <resources>
     <j2se version="1.6+" href="http://java.sun.com/products/autodl/j2se"/>
-    <jar href="textEditorFXML.jar" size="9492" download="eager" />
+    <jar href="textEditorFXML.jar" size="8897" download="eager" />
   </resources>
   <jfx:javafx-desc  width="800" height="600" main-class="texteditorfxml.TextEditorFXML"  name="textEditorFXML" />
   <update check="always"/>
