@@ -33,7 +33,7 @@ and open the template in the editor.
 }
 
 .strongLink .text {
-    -fx-font: bold 20px 'serif';
+    -fx-font: bold 16px 'serif';
 }
 
 #links:visited {

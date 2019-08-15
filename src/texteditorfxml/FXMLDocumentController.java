@@ -26,12 +26,13 @@ import javafx.scene.layout.GridPane;
 import javafx.stage.FileChooser;
 import javafx.stage.Stage;
 import javax.swing.JFileChooser;
-
 /**
  *
  * @author rtbfl
  */
-public class FXMLDocumentController implements Initializable {
+public class FXMLDocumentController {
+    @FXML private HeadingsController fxmlheadingsController;
+    @FXML private EffectsController fxmleffectsController;
     private Stage primaryStage;
     @FXML public TextArea textArea;
     @FXML private final TextArea textArea2 = new TextArea();
@@ -39,82 +40,15 @@ public class FXMLDocumentController implements Initializable {
     @FXML private GridPane gridpaneLeft;
     String documentsPath = new JFileChooser().getFileSystemView().getDefaultDirectory().toString();
     
-    String[] headings = {"h1. ","h2. ","h3. ","h4. ","h5. ","h6. "};
-    @FXML private Hyperlink h1Link;
-    @FXML private Hyperlink h2Link;
-    @FXML private Hyperlink h3Link;
-    @FXML private Hyperlink h4Link;
-    @FXML private Hyperlink h5Link;
-    @FXML private Hyperlink h6Link;
-    String[] effects = {"*","_","??","-","+","^","~","{{","}}","bq. ","{quote}","{color:color}","{color}"};
-    @FXML private Hyperlink strongLink;
-    @FXML private Hyperlink emphasisLink;
-    @FXML private Hyperlink citationLink;
-    @FXML private Hyperlink deletedLink;
-    @FXML private Hyperlink insertedLink;
-    @FXML private Hyperlink superscriptLink;
-    @FXML private Hyperlink subscriptLink;
-    @FXML private Hyperlink monospacedLink;
-    @FXML private Hyperlink blockquoteLink;
-    @FXML private Hyperlink quoteLink;
-    @FXML private Hyperlink colorLink;
-    
-    @FXML 
-    private void handleStrongLinkAction(ActionEvent event ) {
-        selectedText = textArea.getSelectedText();
-        textArea.replaceSelection(effects[0] + selectedText + effects[0]);
+    public String getSelectedTextfromTextArea(){
+        return textArea.getSelectedText();
+//        selectedText = "test text";
+        
     }
     
-    @FXML 
-    private void handleEmphasisLinkAction(ActionEvent event ) {
-        selectedText = textArea.getSelectedText();
-        textArea.replaceSelection(effects[1] + selectedText + effects[1]); 
+    public void replaceSelectedText(String string){
+        textArea.replaceSelection(string);
     }
-    
-    @FXML 
-    private void handleCitationLinkAction(ActionEvent event ) {
-        selectedText = textArea.getSelectedText();
-        textArea.replaceSelection(effects[2] + selectedText + effects[2]); 
-    }
-    
-    
-    @FXML 
-    private void handleH1LinkAction(ActionEvent event ) {
-        selectedText = textArea.getSelectedText();
-        textArea.replaceSelection(headings[0] + selectedText);
-    }
-    
-    @FXML 
-    private void handleH2LinkAction(ActionEvent event ) {
-        selectedText = textArea.getSelectedText();
-        textArea.replaceSelection(headings[1] + selectedText); 
-    }
-    
-    @FXML 
-    private void handleH3LinkAction(ActionEvent event ) {
-        selectedText = textArea.getSelectedText();
-        textArea.replaceSelection(headings[2] + selectedText); 
-    }
-    
-    @FXML 
-    private void handleH4LinkAction(ActionEvent event ) {
-        selectedText = textArea.getSelectedText();
-        textArea.replaceSelection(headings[3] + selectedText); 
-    }
-    
-    @FXML 
-    private void handleH5LinkAction(ActionEvent event ) {
-        selectedText = textArea.getSelectedText();
-        textArea.replaceSelection(headings[4] + selectedText); 
-    }
-    
-    @FXML 
-    private void handleH6LinkAction(ActionEvent event ) {
-        selectedText = textArea.getSelectedText();
-        textArea.replaceSelection(headings[5] + selectedText); 
-    }
-    
-    
     
     private void createOpeningFolder(){
         Path path = Paths.get(documentsPath + "\\jc");
@@ -154,37 +88,22 @@ public class FXMLDocumentController implements Initializable {
         }
     }
     
-    private void addClasses(){
-    h1Link.getStyleClass().add("h1Link");
-    h2Link.getStyleClass().add("h2Link");
-    h3Link.getStyleClass().add("h3Link");
-    h4Link.getStyleClass().add("h4Link");
-    h5Link.getStyleClass().add("h5Link");
-    h6Link.getStyleClass().add("h6Link");
-    strongLink.getStyleClass().add("strongLink");
-    emphasisLink.getStyleClass().add("emphasisLink");
-    citationLink.getStyleClass().add("citationLink");
-//    deletedLink.getStyleClass().add("deletedLink");
-//    insertedLink.getStyleClass().add("insertedLink");
-//    superscriptLink.getStyleClass().add("superscriptLink");
-//    subscriptLink.getStyleClass().add("subscriptLink");
-//    monospacedLink.getStyleClass().add("monospacedLink");
-//    blockquoteLink.getStyleClass().add("blockquoteLink");
-//    quoteLink.getStyleClass().add("quoteLink");
-//    colorLink.getStyleClass().add("colorLink");
-    }
+
     
-    @Override
-    public void initialize(URL url, ResourceBundle rb) {
-//        headingsController.injectMainController(this);
+    @FXML public void initialize() {
+        fxmlheadingsController.init(this);
+        fxmleffectsController.init(this);
+        fxmlheadingsController.addHeadingsClasses();
+        fxmleffectsController.addEffectsClasses();
         textArea.setWrapText(true);
-        addClasses();
         createOpeningFolder();
-        Timer timer = new Timer();;
+        Timer timer = new Timer();
         TimerTask task = new AutoSave();
         timer.schedule(task, 2000, 60000); 
+        
 
     }
+    
     
     
     class AutoSave extends TimerTask {

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.net.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane id="AnchorPane" prefHeight="195.9609375" prefWidth="194.0" styleClass="mainFxmlClass" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/2.2" fx:controller="texteditorfxml.EffectsController">
+  <stylesheets>
+    <URL value="@Styles.css" />
+  </stylesheets>
+  <Hyperlink id="links" fx:id="strongLink" layoutX="5.0" layoutY="3.0" onAction="#handleStrongLinkAction" text="strong" />
+  <Hyperlink id="links" fx:id="emphasisLink" layoutX="5.0" layoutY="35.0" onAction="#handleEmphasisLinkAction" text="emphasis" />
+  <Hyperlink id="links" fx:id="citationLink" layoutX="5.0" layoutY="67.0" onAction="#handleCitationLinkAction" text="citation" />
+  <Hyperlink id="links" fx:id="deletedLink" layoutX="5.0" layoutY="99.0" onAction="#handleDeletedLinkAction" text="deleted" />
+  <Hyperlink id="links" fx:id="insertedLink" layoutX="5.0" layoutY="131.0" onAction="#handleInsertedLinkAction" text="inserted" />
+  <Hyperlink id="links" fx:id="superscriptLink" layoutX="70.0" layoutY="3.0" onAction="#handleSuperScriptLinkAction" text="superscript" />
+  <Hyperlink id="links" fx:id="subscriptLink" layoutX="70.0" layoutY="35.0" onAction="#handleSubscriptLinkAction" text="subscript" />
+  <Hyperlink id="links" fx:id="monospacedLink" layoutX="66.0" layoutY="67.0" onAction="#handleMonoSpaceLinkAction" text="monospaced" />
+  <Hyperlink id="links" fx:id="blockquoteLink" layoutX="70.0" layoutY="99.0" onAction="#handleBlockquoteLinkAction" text="blockquote" />
+  <Hyperlink id="links" fx:id="quoteLink" layoutX="71.0" layoutY="131.0" onAction="#handleQuoteLinkAction" text="quote" />
+  <Hyperlink id="links" fx:id="colorLink" layoutX="5.0" layoutY="161.0" onAction="#handleColorLinkAction" text="color" />
+</AnchorPane>

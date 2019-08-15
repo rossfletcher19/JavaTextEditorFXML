@@ -7,83 +7,61 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 
-<BorderPane prefHeight="600.0" prefWidth="1000.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/2.2" fx:controller="texteditorfxml.FXMLDocumentController" >
-    <top>
-   
-        <MenuBar fx:id="menuBarFxId">
-            <menus>
-                <Menu text="File" fx:id="fileMenu">
-                    <items>
-                        <MenuItem onAction="#saveFile" text="Save" fx:id="saveFileFxId" />
-                    </items>
-                </Menu>
-                <Menu text="Edit" fx:id="editMenu">
-                    <items>
-                        <MenuItem text="Delete" />
-                    </items>
-                </Menu>
-                <Menu text="Help" fx:id="helpMenu">
-                    <items>
-                        <MenuItem text="About" />
-                    </items>
-                </Menu>
-            </menus>
-        </MenuBar>
-    </top>
-    <center>
-        <TextArea fx:id="textArea" />
-    </center>
-    <left>
-        <GridPane id="gridpaneLeft" fx:id="gridpaneLeft" hgap="10.0" prefHeight="200.0" prefWidth="320.0" vgap="10.0" >
-            <Accordion fx:id="leftAccordion" prefHeight="250.0" prefWidth="680.0">
-                <panes>
-
-                    <TitledPane fx:id="headingsTitlePane" animated="true" text="Headings">
-                        <content>
-                                <Pane prefHeight="100.0" prefWidth="200.0">
-                                    <children>
-                                        <Hyperlink id="links" fx:id="h1Link" text="h1. Biggest heading" layoutX="5.0" layoutY="3.0" onAction="#handleH1LinkAction"/>
-                                        <Hyperlink id="links" fx:id="h2Link" text="h2. Bigger heading" layoutX="5.0" layoutY="35.0" onAction="#handleH2LinkAction"/>
-                                        <Hyperlink id="links" fx:id="h3Link" text="h3. Big heading" layoutX="5.0" layoutY="67.0" onAction="#handleH3LinkAction"/>
-                                        <Hyperlink id="links" fx:id="h4Link" text="h4. Normal heading" layoutX="5.0" layoutY="99.0" onAction="#handleH4LinkAction"/>
-                                        <Hyperlink id="links" fx:id="h5Link" text="h5. Small heading" layoutX="5.0" layoutY="131.0" onAction="#handleH5LinkAction"/>
-                                        <Hyperlink id="links" fx:id="h6Link" text="h6. Smallest heading" layoutX="5.0" layoutY="163.0" onAction="#handleH6LinkAction"/>
-                                    </children>
-                                </Pane>
-                          
-                        </content>
-                    </TitledPane>
-                   
-                    
-                    
-                    <TitledPane fx:id="effectsTitlePane" animated="true" text="Effects">
-                        <content>
-                            <Pane prefHeight="100.0" prefWidth="200.0">
-                                <children>
-                                    <Hyperlink id="links" fx:id="strongLink" text="strong" layoutX="5.0" layoutY="3.0" onAction="#handleStrongLinkAction"/>
-                                    <Hyperlink id="links" fx:id="emphasisLink" text="emphasis" layoutX="5.0" layoutY="35.0" onAction="#handleEmphasisLinkAction"/>
-                                    <Hyperlink id="links" fx:id="citationLink" text="citation" layoutX="5.0" layoutY="67.0" onAction="#handleCitationLinkAction"/>
-<!--                                    <Hyperlink id="effectLinks" fx:id="deletedLink" text="deleted" layoutX="5.0" layoutY="99.0" onAction=""/>
-                                    <Hyperlink id="effectLinks" fx:id="insertedLink" text="inserted" layoutX="5.0" layoutY="131.0" onAction=""/>
-                                    <Hyperlink id="effectLinks" fx:id="superscriptLink" text="superscript" layoutX="5.0" layoutY="163.0" onAction=""/>
-                                    <Hyperlink id="effectLinks" fx:id="subscriptLink" text="subscript" layoutX="5.0" layoutY="67.0" onAction=""/>
-                                    <Hyperlink id="effectLinks" fx:id="monospacedLink" text="monospaced" layoutX="5.0" layoutY="99.0" onAction=""/>
-                                    <Hyperlink id="effectLinks" fx:id="blockquoteLink" text="blockquote" layoutX="5.0" layoutY="131.0" onAction=""/>
-                                    <Hyperlink id="effectLinks" fx:id="quoteLink" text="quote" layoutX="5.0" layoutY="163.0" onAction=""/>
-                                    <Hyperlink id="effectLinks" fx:id="colorLink" text="color" layoutX="5.0" layoutY="163.0" onAction=""/>-->
-                                </children>
-                            </Pane>
-                        </content>
-                    </TitledPane>
-                </panes>
-            </Accordion>
-        </GridPane>
-    </left>
-  
-    <!--  <right>
+<BorderPane fx:id="borderPaneRoot" prefHeight="600.0" prefWidth="1000.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/2.2" fx:controller="texteditorfxml.FXMLDocumentController">
+  <!--  <right>
       
     </right>
     <bottom>
       
     </bottom>-->
+  <center>
+    <TextArea fx:id="textArea" />
+  </center>
+  <left>
+    <GridPane fx:id="gridpaneLeft">
+      <Accordion fx:id="Accordion" GridPane.columnIndex="0" GridPane.columnSpan="2" GridPane.rowIndex="0">
+        <panes>
+          <TitledPane fx:id="headingsTitlePane" animated="true" prefHeight="298.0" text="Headings">
+            <content>
+              <Pane>
+                <children>
+                  <fx:include fx:id="fxmlheadings" source="FXMLHeadings.fxml" />
+                </children>
+              </Pane>
+            </content>
+          </TitledPane>
+          <TitledPane fx:id="effectsTitlePane" animated="true" prefHeight="300.0" prefWidth="204.0" text="Effects">
+            <content>
+              <Pane>
+                <children>
+                  <fx:include fx:id="fxmleffects" source="FXMLEffects.fxml" layoutX="0.0" layoutY="0.0" prefHeight="230.0" prefWidth="194.0" />
+                </children>
+              </Pane>
+            </content>
+          </TitledPane>
+        </panes>
+      </Accordion>
+    </GridPane>
+  </left>
+  <top>
+    <MenuBar fx:id="menuBarFxId">
+      <menus>
+        <Menu text="File" fx:id="fileMenu">
+          <items>
+            <MenuItem onAction="#saveFile" text="Save" fx:id="saveFileFxId" />
+          </items>
+        </Menu>
+        <Menu text="Edit" fx:id="editMenu">
+          <items>
+            <MenuItem text="Delete" />
+          </items>
+        </Menu>
+        <Menu text="Help" fx:id="helpMenu">
+          <items>
+            <MenuItem text="About" />
+          </items>
+        </Menu>
+      </menus>
+    </MenuBar>
+  </top>
 </BorderPane>

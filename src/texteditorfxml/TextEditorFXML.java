@@ -20,14 +20,17 @@ public class TextEditorFXML extends Application {
     
     @Override
     public void start(Stage stage) throws Exception {
-        Parent root = FXMLLoader.load(getClass().getResource("FXMLDocument.fxml"));
         
-        Scene scene = new Scene(root);
         
-        scene.getStylesheets().add("texteditorfxml/Styles.css");
-        
-        stage.setScene(scene);
-        stage.show();
+            Parent root = FXMLLoader.load(getClass().getResource("FXMLDocument.fxml"));
+
+            Scene scene = new Scene(root);
+
+            scene.getStylesheets().add("texteditorfxml/Styles.css");
+
+            stage.setScene(scene);
+            stage.show();
+       
     }
 
     /**
