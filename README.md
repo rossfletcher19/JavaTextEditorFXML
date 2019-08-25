@@ -5,7 +5,7 @@
 #### By _**Ross Fletcher 07/2019**_
 
 ## Features
-  * Jira Text Formatting Notation reference pane with text editing functionality
+  * Jira Text Formatting Notation reference pane with text editing functionality. Highlight the text you want to add a Jira text formatting notation to and click one of the links in the left control pane.
   * Auto saving every minute if changes are detected.
   * The first line of the TextArea becomes your files name for quick file creation and saving.
 
