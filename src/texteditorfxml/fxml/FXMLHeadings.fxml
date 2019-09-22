@@ -7,7 +7,7 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<AnchorPane id="headings" prefHeight="200.0" prefWidth="200.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/2.2" fx:controller="texteditorfxml.HeadingsController">
+<AnchorPane id="headings" prefHeight="200.0" prefWidth="200.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/2.2" fx:controller="texteditorfxml.controllers.HeadingsController">
   <stylesheets>
     <URL value="@Styles.css" />
   </stylesheets>

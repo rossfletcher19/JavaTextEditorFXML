@@ -5,6 +5,8 @@
  */
 package texteditorfxml;
 
+import texteditorfxml.controllers.EffectsController;
+import texteditorfxml.controllers.HeadingsController;
 import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
@@ -37,9 +39,7 @@ public class FXMLDocumentController {
     String documentsPath = new JFileChooser().getFileSystemView().getDefaultDirectory().toString();
     
     public String getSelectedTextfromTextArea(){
-        
         return textArea.getSelectedText();
-        
     }
     
     public void replaceSelectedText(String string){
@@ -48,7 +48,6 @@ public class FXMLDocumentController {
     
     private void createOpeningFolder(){
         Path path = Paths.get(documentsPath + "\\jc");
-
         if (Files.exists(path)) {
                 System.out.println("folder already created.");
         } else {
@@ -59,7 +58,6 @@ public class FXMLDocumentController {
     
     @FXML
     private void saveFile(ActionEvent event){
-        
         FileChooser fileChooser = new FileChooser();
         FileChooser.ExtensionFilter extFilter = new FileChooser.ExtensionFilter("TXT files (*.txt)", "*.txt");
         fileChooser.getExtensionFilters().add(extFilter);
@@ -96,14 +94,12 @@ public class FXMLDocumentController {
         Timer timer = new Timer();
         TimerTask task = new AutoSave();
         timer.schedule(task, 2000, 60000); 
-        
-
     }
     
     
     
     class AutoSave extends TimerTask {
-        
+      
         @Override
         public void run() { 
                 
@@ -117,10 +113,7 @@ public class FXMLDocumentController {
                 textArea2.setText(textArea.getText());
             
             }
-                
-      
         } 
-    
     }
     
 }

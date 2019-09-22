@@ -26,7 +26,7 @@ public class TextEditorFXML extends Application {
 
             Scene scene = new Scene(root);
 
-            scene.getStylesheets().add("texteditorfxml/Styles.css");
+            scene.getStylesheets().add("texteditorfxml/fxml/Styles.css");
 
             stage.setScene(scene);
             stage.show();

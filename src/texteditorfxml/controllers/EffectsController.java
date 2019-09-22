@@ -3,11 +3,12 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package texteditorfxml;
+package texteditorfxml.controllers;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Hyperlink;
+import texteditorfxml.FXMLDocumentController;
 
 /**
  *
@@ -51,7 +52,6 @@ public class EffectsController {
         String selectedText = fxmlDocC.getSelectedTextfromTextArea();
         String newText = (effects[0] + selectedText + effects[0]);
         fxmlDocC.replaceSelectedText(newText);
-        
     }
     
     @FXML 
