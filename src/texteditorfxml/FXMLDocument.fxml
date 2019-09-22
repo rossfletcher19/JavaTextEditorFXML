@@ -8,7 +8,28 @@
 <?import javafx.scene.text.*?>
 
 <BorderPane fx:id="borderPaneRoot" prefHeight="600.0" prefWidth="1000.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/2.2" fx:controller="texteditorfxml.FXMLDocumentController">
-  <!--  <right>
+    <top>
+    <MenuBar fx:id="menuBarFxId">
+      <menus>
+        <Menu text="File" fx:id="fileMenu">
+          <items>
+            <MenuItem onAction="#saveFile" text="Save" fx:id="saveFileFxId" />
+          </items>
+        </Menu>
+        <Menu text="Edit" fx:id="editMenu">
+          <items>
+            <MenuItem text="Delete" />
+          </items>
+        </Menu>
+        <Menu text="Help" fx:id="helpMenu">
+          <items>
+            <MenuItem text="About" />
+          </items>
+        </Menu>
+      </menus>
+    </MenuBar>
+  </top>
+    <!--  <right>
       
     </right>
     <bottom>
@@ -34,7 +55,7 @@
             <content>
               <Pane>
                 <children>
-                  <fx:include fx:id="fxmleffects" source="FXMLEffects.fxml" layoutX="0.0" layoutY="0.0" prefHeight="230.0" prefWidth="194.0" />
+                  <fx:include fx:id="fxmleffects" source="FXMLEffects.fxml" />
                 </children>
               </Pane>
             </content>
@@ -43,25 +64,5 @@
       </Accordion>
     </GridPane>
   </left>
-  <top>
-    <MenuBar fx:id="menuBarFxId">
-      <menus>
-        <Menu text="File" fx:id="fileMenu">
-          <items>
-            <MenuItem onAction="#saveFile" text="Save" fx:id="saveFileFxId" />
-          </items>
-        </Menu>
-        <Menu text="Edit" fx:id="editMenu">
-          <items>
-            <MenuItem text="Delete" />
-          </items>
-        </Menu>
-        <Menu text="Help" fx:id="helpMenu">
-          <items>
-            <MenuItem text="About" />
-          </items>
-        </Menu>
-      </menus>
-    </MenuBar>
-  </top>
+  
 </BorderPane>

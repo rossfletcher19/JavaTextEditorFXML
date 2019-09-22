@@ -37,8 +37,8 @@ public class FXMLDocumentController {
     String documentsPath = new JFileChooser().getFileSystemView().getDefaultDirectory().toString();
     
     public String getSelectedTextfromTextArea(){
+        
         return textArea.getSelectedText();
-//        selectedText = "test text";
         
     }
     

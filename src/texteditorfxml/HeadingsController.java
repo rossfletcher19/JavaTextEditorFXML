@@ -24,6 +24,19 @@ public class HeadingsController {
     @FXML public Hyperlink h5Link;
     @FXML public Hyperlink h6Link;
     
+    public void addHeadingsClasses(){
+        h1Link.getStyleClass().add("h1Link");
+        h2Link.getStyleClass().add("h2Link");
+        h3Link.getStyleClass().add("h3Link");
+        h4Link.getStyleClass().add("h4Link");
+        h5Link.getStyleClass().add("h5Link");
+        h6Link.getStyleClass().add("h6Link");
+    }
+    
+    public void init(FXMLDocumentController fxmlDocumentController) {
+        fxmlDocC = fxmlDocumentController;
+    }
+    
     @FXML
     private void handleH1LinkAction(ActionEvent event) {
         String selectedText = fxmlDocC.getSelectedTextfromTextArea();
@@ -67,17 +80,6 @@ public class HeadingsController {
         fxmlDocC.replaceSelectedText(newText);
     }
     
-    public void addHeadingsClasses(){
-        h1Link.getStyleClass().add("h1Link");
-        h2Link.getStyleClass().add("h2Link");
-        h3Link.getStyleClass().add("h3Link");
-        h4Link.getStyleClass().add("h4Link");
-        h5Link.getStyleClass().add("h5Link");
-        h6Link.getStyleClass().add("h6Link");
-    }
     
-    public void init(FXMLDocumentController fxmlDocumentController) {
-        fxmlDocC = fxmlDocumentController;
-    }
 
 }
