@@ -7,7 +7,7 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<AnchorPane id="headings" prefHeight="200.0" prefWidth="200.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/2.2" fx:controller="texteditorfxml.controllers.HeadingsController">
+<AnchorPane id="headings" prefHeight="335.0000999999975" prefWidth="200.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/2.2" fx:controller="texteditorfxml.controllers.HeadingsController">
   <stylesheets>
     <URL value="@Styles.css" />
   </stylesheets>
@@ -17,4 +17,9 @@
   <Hyperlink id="links" fx:id="h4Link" layoutX="5.0" layoutY="99.0" onAction="#handleH4LinkAction" text="h4. Normal heading" />
   <Hyperlink id="links" fx:id="h5Link" layoutX="5.0" layoutY="131.0" onAction="#handleH5LinkAction" text="h5. Small heading" />
   <Hyperlink id="links" fx:id="h6Link" layoutX="5.0" layoutY="163.0" onAction="#handleH6LinkAction" text="h6. Smallest heading" />
+  <Pane layoutX="5.0" layoutY="185.0" prefHeight="132.0001220703125" prefWidth="181.0">
+    <children>
+      <TextArea disable="true" focusTraversable="true" layoutX="0.0" layoutY="0.0" opacity="1.0" prefHeight="133.0" prefWidth="181.0" text="You can highlight some text and then click a header link to create a header or you can place 'h#. ' at the begining of a line, (# will be a number from 1-6) this will also create a header." wrapText="true" />
+    </children>
+  </Pane>
 </AnchorPane>

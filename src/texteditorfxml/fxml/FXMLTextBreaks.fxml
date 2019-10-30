@@ -7,8 +7,15 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<AnchorPane id="AnchorPane" prefHeight="200.0" prefWidth="200.0" styleClass="mainFxmlClass" xmlns:fx="http://javafx.com/fxml/1" fx:controller="texteditorfxml.controllers.TextBreaksController">
-    <stylesheets>
-        <URL value="@Styles.css"/>
-    </stylesheets>
+<AnchorPane id="AnchorPane" prefHeight="300.0" prefWidth="200.0" styleClass="mainFxmlClass" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/2.2" fx:controller="texteditorfxml.controllers.TextBreaksController">
+  <stylesheets>
+    <URL value="@Styles.css" />
+  </stylesheets>
+  <Hyperlink id="textBreaks" fx:id="emptyLineAboveLink" layoutX="5.0" layoutY="3.0" onAction="#handleEmptyLineAboveAction" text="(empty line) above" />
+  <Hyperlink id="textBreaks" fx:id="emptyLineBelowLink" layoutX="5.0" layoutY="25.0" onAction="#handleEmptyLineBelowAction" text="(empty line) below" />
+  <Pane layoutX="5.0" layoutY="163.0" prefHeight="111.0" prefWidth="181.0">
+    <children>
+      <TextArea disable="true" focusTraversable="true" layoutX="0.0" layoutY="0.0" opacity="1.0" prefHeight="104.0" prefWidth="181.0" text="Text Breaks are usually done for you by the renderer but actions were still made for fun!&#10;" wrapText="true" />
+    </children>
+  </Pane>
 </AnchorPane>

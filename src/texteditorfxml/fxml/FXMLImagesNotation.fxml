@@ -7,7 +7,7 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" styleClass="mainFxmlClass" xmlns:fx="http://javafx.com/fxml/1" fx:controller="texteditorfxml.controllers.ImagesNotationController">
+<AnchorPane id="AnchorPane" prefHeight="200" prefWidth="200" styleClass="mainFxmlClass" xmlns:fx="http://javafx.com/fxml/1" fx:controller="texteditorfxml.controllers.ImagesNotationController">
     <stylesheets>
         <URL value="@Styles.css"/>
     </stylesheets>

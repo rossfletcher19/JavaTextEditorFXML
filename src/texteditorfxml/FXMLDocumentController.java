@@ -7,6 +7,7 @@ package texteditorfxml;
 
 import texteditorfxml.controllers.EffectsController;
 import texteditorfxml.controllers.HeadingsController;
+import texteditorfxml.controllers.TextBreaksController;
 import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
@@ -17,7 +18,7 @@ import java.util.Timer;
 import java.util.TimerTask;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-import javafx.event.ActionEvent;
+import javafx.event.ActionEvent;;
 import javafx.fxml.FXML;
 import javafx.scene.control.TextArea;
 import javafx.scene.layout.GridPane;
@@ -31,6 +32,8 @@ import javax.swing.JFileChooser;
 public class FXMLDocumentController {
     @FXML private HeadingsController fxmlheadingsController;
     @FXML private EffectsController fxmleffectsController;
+    @FXML private TextBreaksController fxmltextBreaksController;
+    
     private Stage primaryStage;
     @FXML public TextArea textArea;
     @FXML private final TextArea textArea2 = new TextArea();
@@ -54,6 +57,8 @@ public class FXMLDocumentController {
         new File(documentsPath + "\\jc").mkdir();
         }
     }
+    
+    
     
     
     @FXML
@@ -87,17 +92,19 @@ public class FXMLDocumentController {
     @FXML public void initialize() {
         fxmlheadingsController.init(this);
         fxmleffectsController.init(this);
+        fxmltextBreaksController.init(this);
         fxmlheadingsController.addHeadingsClasses();
         fxmleffectsController.addEffectsClasses();
+        fxmltextBreaksController.addTextBreaksClasses();
         textArea.setWrapText(true);
         createOpeningFolder();
         Timer timer = new Timer();
         TimerTask task = new AutoSave();
-        timer.schedule(task, 2000, 60000); 
+        timer.schedule(task, 2000, 60000);
+       
     }
     
-    
-    
+
     class AutoSave extends TimerTask {
       
         @Override

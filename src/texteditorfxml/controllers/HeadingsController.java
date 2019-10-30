@@ -38,6 +38,13 @@ public class HeadingsController {
         fxmlDocC = fxmlDocumentController;
     }
     
+    
+    public void handleH1Action(){
+        String selectedText = fxmlDocC.getSelectedTextfromTextArea();
+        String newText = (headings[0] + selectedText);
+        fxmlDocC.replaceSelectedText(newText);
+    }
+    
     @FXML
     private void handleH1LinkAction(ActionEvent event) {
         String selectedText = fxmlDocC.getSelectedTextfromTextArea();
